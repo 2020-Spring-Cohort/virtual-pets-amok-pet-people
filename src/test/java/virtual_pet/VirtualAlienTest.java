@@ -2,6 +2,8 @@ package virtual_pet;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VirtualAlienTest {
@@ -16,13 +18,14 @@ public class VirtualAlienTest {
     public void shouldBeAbleToNameAlien(){
         VirtualAlien underTest = new VirtualAlien("John");
         String result = underTest.getName();
-////        System.out.println("You have created a virtual alien named " + VirtualAlien());
+        System.out.println("You have created a virtual alien named " + result);
         assertEquals("John", result);
     }
 
     @Test
     public void shouldBeAbleToPickAlienType() {
         VirtualAlien underTest = new VirtualAlien("John");
-        String result = underTest.pickType();
+        String result = underTest.pickType("organic");
+        assertEquals("organic", result);
     }
 }
