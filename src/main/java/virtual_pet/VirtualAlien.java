@@ -8,8 +8,14 @@ public class VirtualAlien {
     //this is for cyborg or organic
     private String alienType;
 
-    public VirtualAlien(String alienName) {
+    public VirtualAlien() {
+
+    }
+
+
+    public String chooseName(String alienName) {
         this.name = alienName;
+        return alienName;
     }
 
     public String getName() {
