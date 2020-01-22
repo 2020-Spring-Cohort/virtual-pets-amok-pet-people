@@ -4,44 +4,29 @@ import java.util.Scanner;
 
 public class VirtualAlien {
 
-    private String name;
-    //this is for cyborg or organic
-    private String alienType;
+    String name;
+    String alienType;
 
-    public VirtualAlien() {
-
-    }
-
-
-    public String chooseName(String alienName) {
+    public VirtualAlien(String alienName, String alienType) {
         this.name = alienName;
-        return alienName;
+        this.alienType = alienType;
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String setType(String alienType) {
+//
+//
+//        //this.alienType = alienType;
+////        if(alienType == "organic") {
+////            String userType = alienType;
+////            System.out.println("You have chosen an " + alienType + " alien.");
+////            return userType;
+//        }
 
-    public String pickType(String userAlienType) {
-
-//        Scanner input = new Scanner(System.in);
-//        System.out.println("pick your alien type organic or cyborg");
-//        String userAlienType = input.nextLine();
-
-        if(userAlienType == "organic") {
-            this.alienType = "organic";
-            System.out.println("You have chosen an " + alienType + " alien.");
+        public String getName() {
+            return name;
         }
-        if (userAlienType == "cyborg") {
-            this.alienType = "cyborg";
-            System.out.println("You have chosen a " + alienType + " alien.");
+        public String getType() {
+            return alienType;
         }
-        else {
-            System.out.println("Invalid entry, please follow the directions.");
-
-        }
-        return alienType;
-    }
-
 }
 

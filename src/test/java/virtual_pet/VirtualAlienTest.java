@@ -10,13 +10,13 @@ public class VirtualAlienTest {
 
     @Test
     public void shouldBeAbleToCreateAlien() {
-        VirtualAlien underTest = new VirtualAlien("Alien");
+        VirtualAlien underTest = new VirtualAlien("john", "organic");
         System.out.println(underTest.getName());
     }
 
     @Test
     public void shouldBeAbleToNameAlien(){
-        VirtualAlien underTest = new VirtualAlien("John");
+        VirtualAlien underTest = new VirtualAlien("John", "organic");
         String result = underTest.getName();
         System.out.println("You have created a virtual alien named " + result);
         assertEquals("John", result);
@@ -24,8 +24,17 @@ public class VirtualAlienTest {
 
     @Test
     public void shouldBeAbleToPickAlienType() {
-        VirtualAlien underTest = new VirtualAlien("John");
-        String result = underTest.pickType("organic");
-        assertEquals("organic", result);
+        String result;
+        VirtualAlien underTest = new VirtualAlien("john", "organic");
+        result = underTest.getType();
+                assertEquals("organic", result);
+    }
+
+    @Test
+    public void shouldBeAbleToPickAlienType2() {
+        String result;
+        VirtualAlien underTest = new VirtualAlien("john", "cyborg");
+        result = underTest.getType();
+        assertEquals("cyborg", result);
     }
 }
