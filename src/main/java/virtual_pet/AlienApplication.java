@@ -20,33 +20,34 @@ public class AlienApplication {
         System.out.println("Please choose your Alien name");
         Scanner input = new Scanner(System.in);
         String alienName = input.nextLine();
-        //choose type
 
+        //choose type
         String alienType = testType();
         VirtualAlien alien = new VirtualAlien(alienName, alienType);
-        System.out.println("You have chosen the name: " + alien.getName());
-        System.out.println("You have chosen the type: " + alien.getType());
-
+        System.out.println("You have chosen the name: " + alien.getName() + " and the type: " + alien.getType());
     }
 
     private static String testType() {
         System.out.println(" Please choose an organic alien or a cyborg alien.");
-        Scanner inputType = new Scanner(System.in);
-        String alienType = inputType.nextLine();
         String answer = "";
+
         while (answer.equals("")) {
-            if (alienType.equals("organic")) {
-                System.out.println("You have chosen an organic alien.");
+            Scanner inputType = new Scanner(System.in);
+            String alienType = inputType.nextLine();
+            if (alienType.equalsIgnoreCase("organic")) {
                 answer = "organic";
-            } else if (alienType.equals("cyborg")) {
-                System.out.println("You have chosen a cyborg alien.");
+            } else if (alienType.equalsIgnoreCase("cyborg")) {
                 answer = "cyborg";
             } else {
                 System.out.println("Please choose a valid entry.");
-                Scanner userInput = new Scanner (System.in);
-                answer = userInput.nextLine();
+                answer = "";
             }
         }
         return answer;
+    }
+
+    private void testHunger() {
+        int hunger = 0;
+        
     }
 }

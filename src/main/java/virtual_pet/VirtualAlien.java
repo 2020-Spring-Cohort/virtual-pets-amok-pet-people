@@ -6,27 +6,33 @@ public class VirtualAlien {
 
     String name;
     String alienType;
+    int hunger = 10;
+    int intelligence = 5;
 
     public VirtualAlien(String alienName, String alienType) {
         this.name = alienName;
         this.alienType = alienType;
     }
 
-//    public String setType(String alienType) {
-//
-//
-//        //this.alienType = alienType;
-////        if(alienType == "organic") {
-////            String userType = alienType;
-////            System.out.println("You have chosen an " + alienType + " alien.");
-////            return userType;
-//        }
+    public String getName() {
+        return name;
+    }
 
-        public String getName() {
-            return name;
-        }
-        public String getType() {
-            return alienType;
-        }
+    public String getType() {
+        return alienType;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void tick() {
+        hunger += 10;
+        intelligence -= 1;
+    }
 }
 
