@@ -8,8 +8,6 @@ public class VirtualAlien {
     int intelligence = 5;
     int finances = 5;
 
-
-
     public VirtualAlien(String alienName, String alienType) {
         this.name = alienName;
         this.alienType = alienType;

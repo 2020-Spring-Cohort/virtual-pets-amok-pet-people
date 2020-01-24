@@ -46,8 +46,4 @@ public class AlienApplication {
         return answer;
     }
 
-    private void testHunger() {
-        int hunger = 0;
-        
-    }
 }
