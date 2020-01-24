@@ -25,9 +25,13 @@ public class AlienShelter {
         }
     }
     public void printAllAliens(){
+        System.out.println("|- NAME - | - TYPE - | - HUNGER -|");
+        System.out.println("------------------------------");
         for (VirtualAlien alien : alienList.values()){
-            System.out.println("|- NAME -+- TYPE -+- HUNGER -|");
-            System.out.println("|- " + alien.getName() +" -+- " + alien.getType() +" -+- " + alien.getHunger() + "--|\n");
+            System.out.println("|- " + alien.getName() +
+                    " - | - " + alien.getType() +
+                    " - | - " + alien.getHunger() +
+                    " -|");
         }
     }
 }
