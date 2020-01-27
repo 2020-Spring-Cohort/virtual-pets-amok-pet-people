@@ -49,7 +49,21 @@ public class AlienShelterTest {
         shelterUnderTest.addAlien(alienUnderTest2);
         alienUnderTest3 = new VirtualAlien("Jim", "organic");
         shelterUnderTest.addAlien(alienUnderTest3);
+        alienUnderTest3 = new VirtualAlien("Jackson", "organic");
+        shelterUnderTest.addAlien(alienUnderTest3);
         shelterUnderTest.printAllAliens();
+
+    }
+
+    @Test
+    public void shouldBeAbleToSeeNumberOfPets(){
+        alienUnderTest2 = new VirtualAlien("Joe", "organic");
+        shelterUnderTest.addAlien(alienUnderTest2);
+        alienUnderTest3 = new VirtualAlien("Jim", "organic");
+        shelterUnderTest.addAlien(alienUnderTest3);
+        alienUnderTest3 = new VirtualAlien("Jackson", "organic");
+        shelterUnderTest.addAlien(alienUnderTest3);
+        System.out.println("The number of aliens is: " +  shelterUnderTest.numAliensInShelter());
 
     }
 }
