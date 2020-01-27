@@ -39,8 +39,7 @@ public class AlienShelter {
         int i = 0;
         for(String alienName : alienList.keySet()){
             i++;
-        }
-        return i;
+        } return i;
     }
 
 
