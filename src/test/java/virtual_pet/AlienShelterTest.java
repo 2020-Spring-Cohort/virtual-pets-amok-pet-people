@@ -1,14 +1,14 @@
-//package virtual_pet;
-//
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//public class AlienShelterTest {
+package virtual_pet;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AlienShelterTest {
 //    private AlienShelter shelterUnderTest;
 //    private VirtualAlien underTest;
 //    private VirtualAlien alienUnderTest2;
@@ -20,13 +20,44 @@
 //        underTest = new VirtualAlien("Bob", "cyborg");
 //        shelterUnderTest.addAlien(underTest);
 //    }
-//
-//    @Test
-//    public void shouldBeAbleToAddAlien() {
-//        ArrayList<VirtualAlien> retrievedAliens = shelterUnderTest.retrieveAliens();
-//        assertEquals(1, retrievedAliens.size());
-//    }
-//
+
+    @Test
+    public void shouldBeAbleToAddAlien() {
+        VirtualAlien test1 = new CyborgNeptunian("joe");
+        assertEquals("joe", test1.getName());
+    }
+
+    @Test
+    public void shouldBeAbleToGetAlienRace() {
+        VirtualAlien test1 = new CyborgNeptunian("joe");
+        assertEquals("Neptunian", test1.getRace());
+    }
+
+    @Test
+    public void shouldBeAbleToMakeShelterArrayAliens() {
+        VirtualAlien test1 = new CyborgNeptunian("joe");
+        VirtualAlien test2 = new CyborgPlutonian("john");
+        AlienShelter shelterUnderTest = new AlienShelter();
+        shelterUnderTest.addAlien(test1);
+        shelterUnderTest.addAlien(test2);
+        ArrayList<VirtualAlien> alienList = shelterUnderTest.retrieveAliens();
+        assertEquals(2, alienList.size());
+    }
+
+    @Test
+    public void shouldBeAbleToRetrieveAllAliensAndStatus() {
+        VirtualAlien test1 = new CyborgNeptunian("joe");
+        VirtualAlien test2 = new CyborgPlutonian("john");
+        VirtualAlien test3 = new OrganicPlutonian("jim");
+        AlienShelter shelterUnderTest = new AlienShelter();
+        shelterUnderTest.addAlien(test1);
+        shelterUnderTest.addAlien(test2);
+        shelterUnderTest.addAlien(test3);
+        ArrayList<VirtualAlien> alienList = shelterUnderTest.retrieveAliens();
+        shelterUnderTest.printAllAliens();
+    }
+
+
 //    @Test
 //    public void shouldBeAbleToFeedAlienWithShelterOfOne() {
 //        shelterUnderTest.feedAllAliens();
@@ -66,4 +97,4 @@
 //        System.out.println("The number of aliens is: " +  shelterUnderTest.numAliensInShelter());
 //
 //    }
-//}
+}

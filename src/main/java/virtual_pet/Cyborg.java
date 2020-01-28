@@ -4,6 +4,7 @@ abstract class Cyborg extends VirtualAlien {
 
     public Cyborg(String alienName) {
         super(alienName);
+        super.alienType = "Cyborg";
     }
 
     public void feed() {
@@ -13,11 +14,10 @@ abstract class Cyborg extends VirtualAlien {
 
     @Override
     public void read(){
+        System.out.println("I download data to get smarter!");
         intelligence += 4;
         if (intelligence > 10) {
             intelligence = 10;
         }
-        System.out.println("I download data to get smarter!");
     }
-
 }

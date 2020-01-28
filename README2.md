@@ -10,6 +10,8 @@ type by choosing either "cyborg" or "organic".
     2a. First choose your culture (Plutonian or Neptunian)
     2b. Then choose your Type (organic or cyborg)
     2c. Finish by choosing your name
+    
+Neptunians get sweet pay. Plutonians get hot food. 
 
 3. After you make an alien, press a button to see all the aliens in your shelter. Including their name, 
 type, and hunger (or battery level if they are cyborg). 

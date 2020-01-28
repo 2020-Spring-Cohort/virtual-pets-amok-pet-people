@@ -1,12 +1,13 @@
 package virtual_pet;
-abstract public class VirtualAlien {
+public abstract class VirtualAlien {
 
 
     String name;
     String alienType;
     int hunger = 5;
     int intelligence = 5;
-    int finances = 5;
+    protected int payAmount = 3;
+    protected int finances = 5;
 
     public VirtualAlien(String alienName) {
         this.name = alienName;
@@ -18,6 +19,10 @@ abstract public class VirtualAlien {
 
     public String getType() {
         return alienType;
+    }
+
+    public String getRace(){
+        return "not made yet";
     }
 
     public int getHunger() {
@@ -63,7 +68,7 @@ abstract public class VirtualAlien {
     }
 
     public void acquireMoney() {
-        finances += 3;
+        finances += payAmount;
         if (finances > 10) {
             finances = 10;
         }
