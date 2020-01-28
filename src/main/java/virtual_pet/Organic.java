@@ -1,8 +1,13 @@
 package virtual_pet;
 
-public interface Organic {
+abstract class Organic extends VirtualAlien {
 
-    void feed(int feedAmt);
-    void read(int infoAmount);
+    public Organic(String alienName) {
+        super(alienName);
+    }
 
+    public void feed() {
+        super.feed();
+        System.out.println("I eat food!");
+    }
 }

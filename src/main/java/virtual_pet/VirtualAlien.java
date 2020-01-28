@@ -1,6 +1,6 @@
 package virtual_pet;
+abstract public class VirtualAlien {
 
-public class VirtualAlien {
 
     String name;
     String alienType;
@@ -8,9 +8,8 @@ public class VirtualAlien {
     int intelligence = 5;
     int finances = 5;
 
-    public VirtualAlien(String alienName, String alienType) {
+    public VirtualAlien(String alienName) {
         this.name = alienName;
-        this.alienType = alienType;
     }
 
     public String getName() {
@@ -60,6 +59,7 @@ public class VirtualAlien {
         if (intelligence > 10) {
             intelligence = 10;
         }
+        System.out.println("Reading books makes me smart.");
     }
 
     public void acquireMoney() {

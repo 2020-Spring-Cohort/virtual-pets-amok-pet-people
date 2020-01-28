@@ -9,19 +9,25 @@ type by choosing either "cyborg" or "organic".
 2. If nothing is saved, press 1 to make first alien:
     2a. First choose your culture (Plutonian or Neptunian)
     2b. Then choose your Type (organic or cyborg)
-    2c. Finish by choosing your mame
+    2c. Finish by choosing your name
 
 3. After you make an alien, press a button to see all the aliens in your shelter. Including their name, 
 type, and hunger (or battery level if they are cyborg). 
 
-4. You can then press a button to feed them all if you want. 
+4. You have the ability to feed all the pets or one at a time.
 
 5. Every time you take an action, things will "tick" this ticking changes the hunger,
 boredom, or finances of the alien, and, once it gets to a critical point, you need to take action
 such as give them data (read a book), feed them, or acquire money at their job. 
+    - Once hunger gets to a critical level-8 --- you must feed your alien. 
+    - Once intelligence drops to level 2, your alien needs to read/download data 
+    - Once Finances drop to level 2, your alien needs to go to work.
 
-6. As long as an alien has decent finances and intelligence you can release them from the shelter 
-back their home planet.
+6. As long as an alien has decent finances and intelligence, you can release them from the shelter 
+back their home planet.  *** As long as these levels are not critical.
+
+
+
 
 
 
