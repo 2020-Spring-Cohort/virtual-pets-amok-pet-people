@@ -55,6 +55,39 @@ public class AlienShelterTest {
         shelterUnderTest.addAlien(test3);
         ArrayList<VirtualAlien> alienList = shelterUnderTest.retrieveAliens();
         shelterUnderTest.printAllAliens();
+        System.out.println(test1.getName());
+    }
+
+    @Test
+    public void shouldBeAbleToFeedAllAliens() {
+        VirtualAlien test1 = new CyborgNeptunian("joe");
+        VirtualAlien test2 = new CyborgPlutonian("john");
+        VirtualAlien test3 = new OrganicPlutonian("jim");
+        VirtualAlien test4 = new OrganicNeptunian("jerry");
+        AlienShelter shelterUnderTest = new AlienShelter();
+        shelterUnderTest.addAlien(test1);
+        shelterUnderTest.addAlien(test2);
+        shelterUnderTest.addAlien(test3);
+        shelterUnderTest.addAlien(test4);
+        shelterUnderTest.printAllAliens();
+        shelterUnderTest.feedAllAliens();
+        shelterUnderTest.printAllAliens();
+    }
+
+    @Test
+    public void shouldBeAbleToPayAllAliens() {
+        VirtualAlien test1 = new CyborgNeptunian("Joe");
+        VirtualAlien test2 = new CyborgPlutonian("John");
+        VirtualAlien test3 = new OrganicPlutonian("Jim");
+        VirtualAlien test4 = new OrganicNeptunian("Jerry");
+        AlienShelter shelterUnderTest = new AlienShelter();
+        shelterUnderTest.addAlien(test1);
+
+        shelterUnderTest.addAlien(test2);
+        shelterUnderTest.addAlien(test3);
+        shelterUnderTest.addAlien(test4);
+        shelterUnderTest.payAllAliens();
+
     }
 
 

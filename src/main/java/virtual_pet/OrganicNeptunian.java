@@ -12,6 +12,8 @@ public class OrganicNeptunian extends Organic implements Neptunian {
     @Override
     public void sweetPay(int extraCash) {
         finances += extraCash;
+        System.out.println(getName() + " got paid: " + payAmount +
+                ", and an extra " + extraCash + " as a Organic Neptunian.");
     }
 
     @Override

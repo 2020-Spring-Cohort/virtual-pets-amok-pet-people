@@ -14,6 +14,10 @@ public class AlienShelter {
         alienList.put(alien.getName(), alien);
     }
 
+    public void adoptOutAlien(String choice) {
+        alienList.remove(choice);
+    }
+
     public ArrayList<VirtualAlien> retrieveAliens() {
         return new ArrayList<>(alienList.values());
     }
@@ -24,14 +28,40 @@ public class AlienShelter {
             System.out.println(alienToBeFed.getName() + ": 'You fed me, yummy yummy'");
         }
     }
+
+    public void payAllAliens() {
+        System.out.println("Paying all aliens . . .");
+        for (VirtualAlien alienToBePaid : alienList.values()){
+            alienToBePaid.acquireMoney();
+            if(alienToBePaid instanceof Neptunian){
+                ((Neptunian) alienToBePaid).sweetPay(7);
+            } else {
+                System.out.println(alienToBePaid.getName() + ": I got paid " + alienToBePaid.payAmount +" as a " +
+                        alienToBePaid.getType() + " " + alienToBePaid.getRace() + "!" );
+            }
+            System.out.println(alienToBePaid.getName() + "'s new finances are: " + alienToBePaid.getFinances());
+        }
+    }
+
+    public void teachAllAliens() {
+        System.out.println("Teaching all aliens . . .");
+        for (VirtualAlien alienToBeRead : alienList.values()){
+            alienToBeRead.read();
+            System.out.println(alienToBeRead.getName() + "'s new intelligence are: " + alienToBeRead.getIntelligence());
+        }
+    }
+
     public void printAllAliens(){
-        System.out.println("| - NAME - | - TYPE - | - RACE - | - Hunger - |");
+        System.out.println("| - NAME - | - TYPE - | - RACE - | - Hunger - | - Finances - | - Intelligence - |");
         System.out.println("   ---------------------------------------------");
         for (VirtualAlien alien : alienList.values()){
             System.out.println("| - " + alien.getName() +
                     " - | - " + alien.getType() +
                     " - | - " + alien.getRace() +
                     " - | - " + alien.getHunger() +
+                    "   - | -   " + alien.getFinances() +
+                    "   - | -   " + alien.getIntelligence() +
+
                     " - |");
         }
     }

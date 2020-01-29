@@ -31,6 +31,18 @@ back their home planet.  *** As long as these levels are not critical.
 
 
 
+NOTES FOR US
+
+Main Application Big Picture Stuff
+-Tick method for every action
+-exit at any point
+-do everything with 1, 2, 3, or 4
+
+
+
+
+
+
 
 
 

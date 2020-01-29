@@ -1,7 +1,6 @@
 package virtual_pet;
 public abstract class VirtualAlien {
 
-
     String name;
     String alienType;
     int hunger = 5;
@@ -64,7 +63,7 @@ public abstract class VirtualAlien {
         if (intelligence > 10) {
             intelligence = 10;
         }
-        System.out.println("Reading books makes me smart.");
+        System.out.println(getName() + ": Reading books makes me smart.");
     }
 
     public void acquireMoney() {

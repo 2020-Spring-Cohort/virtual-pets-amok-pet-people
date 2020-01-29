@@ -14,7 +14,7 @@ abstract class Cyborg extends VirtualAlien {
 
     @Override
     public void read(){
-        System.out.println("I download data to get smarter!");
+        System.out.println(getName() + ": I download data to get smarter!");
         intelligence += 4;
         if (intelligence > 10) {
             intelligence = 10;
