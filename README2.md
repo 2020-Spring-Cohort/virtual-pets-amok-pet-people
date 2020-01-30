@@ -1,43 +1,27 @@
-// THESE ARE OLD DIRECTIONS // 
-Welcome to the Virtual Alien Game.  In this game you will choose your Alien type and name.
-When the game opens, you will hit 1 to create a new alien. It must have a name and you must pick a 
-type by choosing either "cyborg" or "organic".
 
 // WELCOME TO THE ALIEN GAME //
-1. Open the Game (at any time you can press 0 to exit and possible save)
+1. Open the Game (at any time you can press 0 to exit)
 
-2. If nothing is saved, press 1 to make first alien:
-    2a. First choose your culture (Plutonian or Neptunian)
+2. Press 1 to make your first alien:
+    2a. First choose your Alien's Name 
     2b. Then choose your Type (organic or cyborg)
-    2c. Finish by choosing your name
+    2c. Finish by choosing your race (Plutonian or Neptunian)
     
-Neptunians get sweet pay. Plutonians get hot food. 
+        Neptunians get extra cash when they are paid. 
+        Plutonians get extra food when they are fed. 
 
-3. After you make an alien, press a button to see all the aliens in your shelter. Including their name, 
-type, and hunger (or battery level if they are cyborg). 
+3. After you make an alien, you can press 4 button to see all the aliens in your shelter. 
+    Including their name and other characteristics. 
 
-4. You have the ability to feed all the pets or one at a time.
-
+4. Pressing 2 will allow you to take action on all the aliens at once, while pressing
+    3 will allow you to take action on just one particular alien.
+    
 5. Every time you take an action, things will "tick" this ticking changes the hunger,
-boredom, or finances of the alien, and, once it gets to a critical point, you need to take action
+intelligence, or finances of the alien, and, once it gets to a critical point, you need to take action
 such as give them data (read a book), feed them, or acquire money at their job. 
-    - Once hunger gets to a critical level-8 --- you must feed your alien. 
-    - Once intelligence drops to level 2, your alien needs to read/download data 
-    - Once Finances drop to level 2, your alien needs to go to work.
 
-6. As long as an alien has decent finances and intelligence, you can release them from the shelter 
-back their home planet.  *** As long as these levels are not critical.
-
-
-
-
-NOTES FOR US
-
-Main Application Big Picture Stuff
--Tick method for every action
--exit at any point
--do everything with 1, 2, 3, or 4
-
+6. You can release aliens from the shelter back their home planet by pressing 5 and picking
+    the alien you would like to adopt out (please spell the name right!).
 
 
 
