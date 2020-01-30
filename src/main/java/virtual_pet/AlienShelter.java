@@ -100,7 +100,7 @@ public class AlienShelter {
         if(alienToBePaid instanceof Neptunian){
             ((Neptunian) alienToBePaid).sweetPay(7);
         }
-        System.out.println("You made " + alienToBePaid.getName() + " richer.");
+        System.out.println("You made " + alienToBePaid.getName() + " richer. New finances are: $" + alienToBePaid.getFinances());
         System.out.println(" ");
     }
 
