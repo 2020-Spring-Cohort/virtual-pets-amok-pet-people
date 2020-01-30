@@ -25,7 +25,9 @@ public class AlienShelter {
     public void feedAllAliens() {
         for (VirtualAlien alienToBeFed : alienList.values()){
             alienToBeFed.feed();
-            System.out.println(alienToBeFed.getName() + ": 'You fed me, yummy yummy'");
+            if (alienToBeFed instanceof Plutonian){
+                ((Plutonian) alienToBeFed).sweetFeed(6);
+            }
         }
     }
 
@@ -35,11 +37,15 @@ public class AlienShelter {
             alienToBePaid.acquireMoney();
             if(alienToBePaid instanceof Neptunian){
                 ((Neptunian) alienToBePaid).sweetPay(7);
+                int extraCash = 7;
+                System.out.println(alienToBePaid.getName() + " got paid: $" + alienToBePaid.payAmount +
+                        ", and an extra $" + extraCash + " as a " + alienToBePaid.getType() + " " + alienToBePaid.getRace());
+
             } else {
-                System.out.println(alienToBePaid.getName() + ": I got paid " + alienToBePaid.payAmount +" as a " +
+                System.out.println(alienToBePaid.getName() + " got paid $" + alienToBePaid.payAmount +" as a " +
                         alienToBePaid.getType() + " " + alienToBePaid.getRace() + "!" );
             }
-            System.out.println(alienToBePaid.getName() + "'s new finances are: " + alienToBePaid.getFinances());
+            System.out.println(alienToBePaid.getName() + "'s new finances are: $" + alienToBePaid.getFinances());
         }
     }
 
@@ -47,7 +53,7 @@ public class AlienShelter {
         System.out.println("Teaching all aliens . . .");
         for (VirtualAlien alienToBeRead : alienList.values()){
             alienToBeRead.read();
-            System.out.println(alienToBeRead.getName() + "'s new intelligence are: " + alienToBeRead.getIntelligence());
+            System.out.println(alienToBeRead.getName() + "'s new intelligence is: " + alienToBeRead.getIntelligence());
         }
     }
 
@@ -59,7 +65,7 @@ public class AlienShelter {
                     " - | - " + alien.getType() +
                     " - | - " + alien.getRace() +
                     " - | - " + alien.getHunger() +
-                    "   - | -   " + alien.getFinances() +
+                    " - | -   " + alien.getFinances() +
                     "   - | -   " + alien.getIntelligence() +
 
                     " - |");
@@ -73,4 +79,28 @@ public class AlienShelter {
     }
 
 
+    public void feedOne(String choice) {
+        VirtualAlien alienToBeFed = alienList.get(choice);
+        alienToBeFed.feed();
+        System.out.println("You Fed " + alienToBeFed.getName() );
+    }
+    public void teachOne(String choice) {
+        VirtualAlien alienToBeTaught = alienList.get(choice);
+        alienToBeTaught.read();
+        System.out.println("You made " + alienToBeTaught.getName() + " smarter.");
+    }
+    public void acquireMoneyOne(String choice) {
+        VirtualAlien alienToBePaid = alienList.get(choice);
+        alienToBePaid.acquireMoney();
+        if(alienToBePaid instanceof Neptunian){
+            ((Neptunian) alienToBePaid).sweetPay(7);
+        }
+        System.out.println("You made " + alienToBePaid.getName() + " richer.");
+    }
+
+    public void tickAll() {
+        for (VirtualAlien alienToBeTicked : alienList.values()) {
+            alienToBeTicked.tick();
+        }
+    }
 }

@@ -10,7 +10,9 @@ public class OrganicPlutonian extends Organic implements Plutonian {
     }
     @Override
     public void sweetFeed(int extraFood){
-        finances += extraFood;
+        hunger += extraFood;
+        System.out.println(getName() + " got fed " + feedAmount +
+                " and " + extraFood + " extra food as a Plutonian.");
     }
 
     @Override

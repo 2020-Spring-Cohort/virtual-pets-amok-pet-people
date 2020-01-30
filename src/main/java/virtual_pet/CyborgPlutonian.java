@@ -8,6 +8,9 @@ public class CyborgPlutonian extends Cyborg implements Plutonian {
 
     @Override
     public void sweetFeed(int extraFood){
+        hunger += extraFood;
+        System.out.println(getName() + " got fed " + feedAmount +
+                " and " + extraFood + " extra food as a Plutonian.");
     }
 
     @Override

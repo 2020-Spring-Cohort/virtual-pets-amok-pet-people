@@ -7,6 +7,4 @@ public interface Neptunian {
     void sweetPay(int extraCash);
 
 
-
-
 }

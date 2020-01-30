@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class AlienApplication {
 
-
     private static AlienShelter alienShelter = new AlienShelter();
     private static Scanner input = new Scanner(System.in);
 
@@ -22,7 +21,6 @@ public class AlienApplication {
         System.out.println("Press 1 to begin, or 0 to exit.");
         int menuInput = userInput(input);
 
-
         // DELETE LATER
         VirtualAlien alien1 = new CyborgNeptunian("John");
         AddAndPrint(alien1);
@@ -32,12 +30,13 @@ public class AlienApplication {
 
         //Initialization Menu
         while (menuInput !=0){
+            System.out.println("Main Menu (press 9 for options)");
 
-            printMenuOptions();
             int menu = userInput(input);
             input.nextLine();
 
             if(menu == 0){
+                System.out.println("Goodbye!");
                 menuInput = 0;
             }
         //Main Menu Loop
@@ -46,47 +45,59 @@ public class AlienApplication {
             switch (menu) {
                 case 1:
                 System.out.println("Great, let's make an alien.");
+
                 createAlien();
-                //tickAll();
+                alienShelter.tickAll();
                 menu = 0;
                 break;
 
                 case 2:
                 takeActionOnAll();
+                alienShelter.tickAll();
                 menu=0;
                 break;
 
                 case 3:
-                    menu=0;
+                takeActionOnOne();
+                alienShelter.tickAll();
+                menu=0;
                 break;
 
                 case 4:
-                    alienShelter.printAllAliens();
-                    menu=0;
+                alienShelter.printAllAliens();
+                menu=0;
                 break;
 
                 case 5:
-                    adoptAlien();
-                    //step 1 print the names
-                    //step 2 choose the one to adopt out by name (or number)
-                    //execute the adopt
-
-                    menu=0;
+                adoptAlien();
+                alienShelter.tickAll();
+                menu=0;
                 break;
 
                 case 0:
+
+                break;
+
+                case 9:
+                printMenuOptions();
+                menu=0;
+                break;
+
+                default:
+                menu=0;
                 break;
             }
         }
         }
     }
 
+
     private static int userInput(Scanner input) {
         return input.nextInt();
     }
 
     private static void printMenuOptions() {
-        System.out.println("Main Menu ");
+
         System.out.println("Press 1 to create a NEW Alien.");
         System.out.println("Press 2 to take action on ALL aliens.");
         System.out.println("Press 3 to take action just ONE Alien.");
@@ -98,12 +109,10 @@ public class AlienApplication {
     public static void createAlien() {
         //set name
 
-
         System.out.println("Please choose your Alien name");
         String alienName = input.nextLine();
 
         System.out.println("Please choose your Alien type and race");
-
         String inputType = testType();
         String inputRace = testRace();
         String inputTypeAndRace = inputType + " " + inputRace;
@@ -190,6 +199,7 @@ public class AlienApplication {
          Scanner input = new Scanner(System.in);
          String choice = input.nextLine();
          alienShelter.adoptOutAlien(choice);
+         System.out.println(choice + " is adopted out, say bye!");
      }
 
      public static void takeActionOnAll(){
@@ -211,5 +221,49 @@ public class AlienApplication {
                 break;
         }
      }
+
+    private static void takeActionOnOne() {
+        //First Pick
+        System.out.println("Which alien do you want to take action on?");
+        //get number total of aliens in shelter
+        //set number - choices
+        ///user inputs choice
+
+        ArrayList<VirtualAlien> shelter = alienShelter.retrieveAliens();
+        int shelterSize = shelter.size();
+        System.out.println("pick from " + shelterSize + " aliens.");
+
+        for (VirtualAlien aliens : alienShelter.retrieveAliens()) {
+            System.out.println(aliens.getName());
+        }
+
+        Scanner input = new Scanner(System.in);
+        String alienName = input.nextLine();
+
+        //What do you want to do?
+
+        System.out.println("Press 1 to feed " + alienName + "...");
+        System.out.println("Press 2 to teach " + alienName +  " and make it smarter...");
+        System.out.println("Press 3 to send " + alienName +  " to work...");
+
+
+        int choice = input.nextInt();
+        //be able to choose what action to do to all the aliens
+        switch(choice){
+            case 1: //feed
+                alienShelter.feedOne(alienName);
+                break;
+            case 2: //increase intelligence, teach aliens
+                alienShelter.teachOne(alienName);
+                break;
+            case 3:  //send aliens to work
+                alienShelter.acquireMoneyOne(alienName);
+                break;
+
+
+
+    }
+
+    }
 
 }

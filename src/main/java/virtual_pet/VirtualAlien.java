@@ -1,12 +1,13 @@
 package virtual_pet;
 public abstract class VirtualAlien {
 
-    String name;
-    String alienType;
-    int hunger = 5;
-    int intelligence = 5;
-    protected int payAmount = 3;
-    protected int finances = 5;
+    protected String name;
+    protected String alienType;
+    protected int hunger = 25;
+    protected int intelligence = 25;
+    protected int payAmount = 11;
+    protected int feedAmount = 7;
+    protected int finances = 25;
 
     public VirtualAlien(String alienName) {
         this.name = alienName;
@@ -33,43 +34,52 @@ public abstract class VirtualAlien {
     }
 
     public void tick() {
-        hunger += 1;
-        if (hunger > 10) {
-            hunger = 10;
+        hunger += 3;
+        if (hunger > 50) {
+            hunger = 50;
         }
-        intelligence -= 1;
+        if(hunger > 40){
+            System.out.println(name + " is starving broh!");
+        }
+        intelligence -= 4;
         if (intelligence < 0) {
             intelligence = 0;
         }
-        finances -= 1;
+        if (intelligence <= 10){
+            System.out.println(name + " is getting real dumb!");
+        }
+        finances -= 5;
         if (finances < 0) {
             finances = 0;
         }
+        if(finances <=10){
+            System.out.println(name + " is broke, send them to work!");
+        }
     }
+
 
     public int getFinances() {
         return finances;
     }
 
     public void feed() {
-        hunger -= 3;
+        hunger -= feedAmount;
         if (hunger < 0) {
             hunger = 0;
         }
     }
 
     public void read() {
-        intelligence += 4;
-        if (intelligence > 10) {
-            intelligence = 10;
+        intelligence += 9;
+        if (intelligence > 50) {
+            intelligence = 50;
         }
-        System.out.println(getName() + ": Reading books makes me smart.");
     }
 
     public void acquireMoney() {
         finances += payAmount;
-        if (finances > 10) {
-            finances = 10;
+        if (finances > 50) {
+            finances = 50;
         }
     }
 }
