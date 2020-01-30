@@ -11,6 +11,7 @@ public class CyborgPlutonian extends Cyborg implements Plutonian {
         hunger += extraFood;
         System.out.println(getName() + " got fed " + feedAmount +
                 " and " + extraFood + " extra food as a Plutonian.");
+        System.out.println(" ");
     }
 
     @Override

@@ -46,6 +46,7 @@ public class AlienShelter {
                         alienToBePaid.getType() + " " + alienToBePaid.getRace() + "!" );
             }
             System.out.println(alienToBePaid.getName() + "'s new finances are: $" + alienToBePaid.getFinances());
+            System.out.println(" ");
         }
     }
 
@@ -53,13 +54,14 @@ public class AlienShelter {
         System.out.println("Teaching all aliens . . .");
         for (VirtualAlien alienToBeRead : alienList.values()){
             alienToBeRead.read();
-            System.out.println(alienToBeRead.getName() + "'s new intelligence is: " + alienToBeRead.getIntelligence());
+            System.out.println(alienToBeRead.getName() + "'s new intelligence is: " + alienToBeRead.getIntelligence()) ;
+            System.out.println(" ");
         }
     }
 
     public void printAllAliens(){
         System.out.println("| - NAME - | - TYPE - | - RACE - | - Hunger - | - Finances - | - Intelligence - |");
-        System.out.println("   ---------------------------------------------");
+        System.out.println(" -------------------------------------------------------------------------------");
         for (VirtualAlien alien : alienList.values()){
             System.out.println("| - " + alien.getName() +
                     " - | - " + alien.getType() +
@@ -83,11 +85,13 @@ public class AlienShelter {
         VirtualAlien alienToBeFed = alienList.get(choice);
         alienToBeFed.feed();
         System.out.println("You Fed " + alienToBeFed.getName() );
+        System.out.println(" ");
     }
     public void teachOne(String choice) {
         VirtualAlien alienToBeTaught = alienList.get(choice);
         alienToBeTaught.read();
         System.out.println("You made " + alienToBeTaught.getName() + " smarter.");
+        System.out.println(" ");
     }
     public void acquireMoneyOne(String choice) {
         VirtualAlien alienToBePaid = alienList.get(choice);
@@ -96,6 +100,7 @@ public class AlienShelter {
             ((Neptunian) alienToBePaid).sweetPay(7);
         }
         System.out.println("You made " + alienToBePaid.getName() + " richer.");
+        System.out.println(" ");
     }
 
     public void tickAll() {

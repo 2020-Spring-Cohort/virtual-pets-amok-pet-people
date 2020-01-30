@@ -21,13 +21,6 @@ public class AlienApplication {
         System.out.println("Press 1 to begin, or 0 to exit.");
         int menuInput = userInput(input);
 
-        // DELETE LATER
-        VirtualAlien alien1 = new CyborgNeptunian("John");
-        AddAndPrint(alien1);
-        VirtualAlien alien2 = new OrganicPlutonian("Jack");
-        AddAndPrint(alien2);
-
-
         //Initialization Menu
         while (menuInput !=0){
             System.out.println("Main Menu (press 9 for options)");
@@ -41,25 +34,28 @@ public class AlienApplication {
             }
         //Main Menu Loop
         while(menu!=0) {
-
+            if(menu == 2 ||  menu == 3 || menu == 5){
+                alienShelter.tickAll();
+            }
             switch (menu) {
+
                 case 1:
                 System.out.println("Great, let's make an alien.");
 
                 createAlien();
-                alienShelter.tickAll();
+
                 menu = 0;
                 break;
 
                 case 2:
                 takeActionOnAll();
-                alienShelter.tickAll();
+
                 menu=0;
                 break;
 
                 case 3:
                 takeActionOnOne();
-                alienShelter.tickAll();
+
                 menu=0;
                 break;
 
@@ -70,7 +66,7 @@ public class AlienApplication {
 
                 case 5:
                 adoptAlien();
-                alienShelter.tickAll();
+
                 menu=0;
                 break;
 

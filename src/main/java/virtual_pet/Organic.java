@@ -10,6 +10,7 @@ abstract class Organic extends VirtualAlien {
     public void feed() {
         super.feed();
         System.out.println(name + ": I eat real food!");
+
     }
 
     public void read(){
