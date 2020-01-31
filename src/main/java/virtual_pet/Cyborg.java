@@ -10,7 +10,7 @@ abstract class Cyborg extends VirtualAlien {
 
     public void feed() {
         super.feed();
-        System.out.println("I eat nuts and bolts");
+        System.out.println(getName() + "I eat nuts and bolts");
     }
 
     @Override

@@ -60,20 +60,34 @@ public class AlienShelter {
     }
 
     public void printAllAliens(){
-        System.out.println("| - NAME - | - TYPE - | - RACE - | - Hunger - | - Finances - | - Intelligence - |");
-        System.out.println(" -------------------------------------------------------------------------------");
-        for (VirtualAlien alien : alienList.values()){
-            System.out.printf("| - " + alien.getName() +
-                    " - | - " + alien.getType() +
-                    " - | - " + alien.getRace() +
-                    " - | - " + alien.getHunger() +
-                    " - | -   " + alien.getFinances() +
-                    "   - | -   " + alien.getIntelligence() +
+//        System.out.println("| - NAME - | - TYPE - | - RACE - | - Hunger - | - Finances - | - Intelligence - |");
+//        System.out.println(" -------------------------------------------------------------------------------");
+//        for (VirtualAlien alien : alienList.values()){
+//            System.out.printf("| - " + alien.getName() +
+//                    " - | - " + alien.getType() +
+//                    " - | - " + alien.getRace() +
+//                    " - | - " + alien.getHunger() +
+//                    " - | -   " + alien.getFinances() +
+//                    "   - | -   " + alien.getIntelligence() +
+//
+//                    " - |");
+//            System.out.println("\n");
+            String leftAlignFormat = "| %-7s | %-9s | %-9s | %6d | %8d | %12d |%n";
 
-                    " - |");
-            System.out.println("\n");
+            System.out.format("+---------+-----------+-----------+--------+----------+--------------+%n");
+            System.out.format("|  NAME   | TYPE      | RACE      | Hunger | Finances | Intelligence |%n");
+            System.out.format("+---------+-----------+-----------+--------+----------+--------------+%n");
+            for (VirtualAlien alien : alienList.values()){
+                System.out.format(leftAlignFormat, alien.getName()
+                                , alien.getType()
+                                , alien.getRace()
+                                , alien.getHunger()
+                                , alien.getFinances()
+                                , alien.getIntelligence());
+            }
+        System.out.format("+---------+-----------+-----------+--------+----------+--------------+%n");
         }
-    }
+
     public int numAliensInShelter(){
         int i = 0;
         for(String alienName : alienList.keySet()){
